@@ -1,5 +1,5 @@
 module.exports = {
-  plugins: ["import", "simple-import-sort"],
+  plugins: ["import", "simple-import-sort", "@typescript-eslint"],
   extends: [
     "plugin:import/recommended",
     "plugin:import/errors",
@@ -71,17 +71,7 @@ module.exports = {
     "prettier/prettier": "error",
     "simple-import-sort/exports": "error",
     "simple-import-sort/imports": "error",
-    "unused-imports/no-unused-imports": "error",
     "no-unused-vars": "off",
-    "unused-imports/no-unused-vars": [
-      "warn",
-      {
-        vars: "all",
-        varsIgnorePattern: "^_",
-        args: "after-used",
-        argsIgnorePattern: "^_",
-      },
-    ],
   },
   settings: {
     "import/parsers": {
