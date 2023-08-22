@@ -12,7 +12,6 @@ module.exports = {
   parser: "@typescript-eslint/parser",
   rules: {
     "react/jsx-key": "off",
-    "import/named": 0,
 
     //error prevention
     "array-callback-return": ["error", { checkForEach: true }],
@@ -71,7 +70,9 @@ module.exports = {
     "prettier/prettier": "error",
     "simple-import-sort/exports": "error",
     "simple-import-sort/imports": "error",
-    "no-unused-vars": "off",
+    "react/jsx-uses-react": "off",
+    "react/jsx-uses-vars": "off",
+    "no-unused-vars": "error",
   },
   settings: {
     "import/parsers": {
