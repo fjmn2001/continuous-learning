@@ -1,9 +1,11 @@
 import "./App.css";
 
+import { Dashboard } from "./sections/dashboard/Dashboard.tsx";
+
 const App = () => {
   return (
     <>
-      <h1>Francisco Marcano</h1>
+      <Dashboard />
     </>
   );
 };
