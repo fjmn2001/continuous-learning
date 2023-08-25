@@ -23,7 +23,7 @@
   },
   "devDependencies": {
     "@swc/jest": "^0.2.29",
-    "@testing-library/jest-dom": "^6.0.1",
+    "@testing-library/jest-dom": "^6.1.2",
     "@testing-library/react": "^14.0.0",
     "@types/jest": "^29.5.3",
     "@types/node": "^20.5.6",

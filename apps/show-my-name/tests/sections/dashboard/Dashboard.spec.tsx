@@ -7,6 +7,6 @@ describe("Dashboard", () => {
     render(<Dashboard />);
 
     const myName = await screen.findByText(/Francisco Marcano/i);
-    expect(myName).toBeInTheDocument();
+    expect(myName).toBeDefined();
   });
 });
