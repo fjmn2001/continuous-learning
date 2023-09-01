@@ -15,7 +15,7 @@ export const Dashboard = () => {
       <ul>
         {coWorkers.map((cw) => (
           // todo: add eslint key error
-          <li>{cw.name}</li>
+          <li key={cw.name}>{cw.name}</li>
         ))}
       </ul>
     </>
