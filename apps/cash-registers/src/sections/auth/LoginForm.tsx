@@ -1,4 +1,36 @@
+import { useState } from "react";
+import { useForm } from "react-hook-form";
+
 export const LoginForm = () => {
+  const [error, setError] = useState(false);
+  const [success, setSuccess] = useState(false);
+
+  const { register, handleSubmit } = useForm();
+  const onSubmit = ({
+    email,
+    password,
+  }: {
+    email: string;
+    password: string;
+  }) => {
+    if (email !== "fjmn2001@gmail.com") {
+      setError(true);
+      setSuccess(false);
+
+      return;
+    }
+
+    if (password !== "123456") {
+      setError(true);
+      setSuccess(false);
+
+      return;
+    }
+
+    setError(false);
+    setSuccess(true);
+  };
+
   return (
     <>
       <section className="bg-gray-50 dark:bg-gray-900">
@@ -15,7 +47,10 @@ export const LoginForm = () => {
               <h1 className="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
                 Sign in to your account
               </h1>
-              <form className="space-y-4 md:space-y-6" action="#">
+              <form
+                className="space-y-4 md:space-y-6"
+                onSubmit={handleSubmit(onSubmit)}
+              >
                 <div>
                   <label
                     htmlFor="email"
@@ -26,10 +61,10 @@ export const LoginForm = () => {
                   <input
                     type="text"
                     id={"email"}
-                    name={"email"}
                     className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                     placeholder="username@company.com"
                     required
+                    {...register("email")}
                   />
                 </div>
                 <div>
@@ -42,9 +77,9 @@ export const LoginForm = () => {
                   <input
                     type="password"
                     id={"password"}
-                    name={"password"}
                     className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                     placeholder="Type your password"
+                    {...register("password")}
                     required
                   />
                 </div>
@@ -54,6 +89,8 @@ export const LoginForm = () => {
                 >
                   Iniciar sesión
                 </button>
+                {error && <h1 style={{ color: "white" }}>Error</h1>}
+                {success && <h1 style={{ color: "white" }}>Success</h1>}
               </form>
             </div>
           </div>
