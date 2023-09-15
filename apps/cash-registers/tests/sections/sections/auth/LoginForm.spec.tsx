@@ -18,7 +18,8 @@ describe("LoginForm Test", () => {
     });
     await userEvent.click(submitButton);
 
-    await screen.findByText(/Success/i);
+    const success = await screen.findByText(/Success/i);
+    expect(success).toBeInTheDocument();
   });
 
   it("show error when form is summited with bad credentials", async () => {
@@ -35,6 +36,7 @@ describe("LoginForm Test", () => {
     });
     await userEvent.click(submitButton);
 
-    await screen.findByText(/Error/i);
+    const error = await screen.findByText(/Error/i);
+    expect(error).toBeInTheDocument();
   });
 });
