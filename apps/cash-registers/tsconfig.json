@@ -24,7 +24,13 @@
       "@/*": ["./src/*"]
     }
   },
+  "ts-node": {
+    "compilerOptions": {
+      "module": "ESNext",
+      "moduleResolution": "Node"
+    }
+  },
   "include": ["src"],
   "references": [{ "path": "./tsconfig.node.json" }],
-  "types": ["node", "jest", "@testing-library/jest-dom"]
+  "types": ["node", "jest", "@testing-library/jest-dom", "cypress"]
 }

@@ -19,6 +19,7 @@ describe("LoginForm Test", () => {
     await userEvent.click(submitButton);
 
     const success = await screen.findByText(/Success/i);
+    // @ts-ignore
     expect(success).toBeInTheDocument();
   });
 
@@ -37,6 +38,7 @@ describe("LoginForm Test", () => {
     await userEvent.click(submitButton);
 
     const error = await screen.findByText(/Error/i);
+    // @ts-ignore
     expect(error).toBeInTheDocument();
   });
 });
